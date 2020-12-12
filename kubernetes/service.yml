@@ -1,0 +1,27 @@
+Name:                     skillbox
+Namespace:                default
+Labels:                   app=skillbox
+Annotations:              <none>
+Selector:                 app=skillbox
+Type:                     LoadBalancer
+IP Families:              <none>
+IP:                       10.96.202.165
+IPs:                      <none>
+LoadBalancer Ingress:     84.201.155.250
+Port:                     <unset>  3000/TCP
+TargetPort:               3000/TCP
+NodePort:                 <unset>  32222/TCP
+Endpoints:                10.112.128.6:3000
+Session Affinity:         None
+External Traffic Policy:  Cluster
+apiVersion: v1
+kind: Service
+metadata:
+  name: skillbox
+spec:
+  selector:
+    app: skillbox
+  ports:
+    - port: 3000
+      targetPort: 3000
+  type: LoadBalancer
