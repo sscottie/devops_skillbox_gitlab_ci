@@ -10,5 +10,4 @@ build:
   script:
           #- docker pull registry.gitlab.com/sscottie/skillbox_devops_hometask
     - docker build -t registry.gitlab.com/sscottie/skillbox_devops_hometask .
-    - docker push registry.gitlab.com/sscottie/skillbox_devops_hometask:$CI_BUILD_REF
-    - docker push registry.gitlab.com/sscottie/skillbox_devops_hometask:latest
+    - docker push registry.gitlab.com/sscottie/skillbox_devops_hometask
