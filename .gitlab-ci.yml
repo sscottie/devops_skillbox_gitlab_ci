@@ -1,0 +1,14 @@
+image: docker
+
+services:
+  - docker:dind
+
+before_script:
+  - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+
+build:
+  script:
+    - docker pull registry.gitlab.com/sscottie/skillbox_devops_hometask
+    - docker build --cache-from --tag registry.gitlab.com/sscottie/skillbox_devops_hometask:$CI_BUILD_REF --tag registry.gitlab.com/sscottie/skillbox_devops_hometask:latest .
+    - docker push registry.gitlab.com/sscottie/skillbox_devops_hometask:$CI_BUILD_REF
+    - docker push registry.gitlab.com/sscottie/skillbox_devops_hometask:latest
