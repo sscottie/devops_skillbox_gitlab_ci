@@ -12,3 +12,6 @@ build:
     - docker build --cache-from registry.gitlab.com/sscottie/skillbox_devops_hometask --tag registry.gitlab.com/sscottie/skillbox_devops_hometask:$CI_BUILD_REF --tag registry.gitlab.com/sscottie/skillbox_devops_hometask:latest .
     - docker push registry.gitlab.com/sscottie/skillbox_devops_hometask:$CI_BUILD_REF 
     - docker push registry.gitlab.com/sscottie/skillbox_devops_hometask:latest
+test:
+  script:
+    - yarn test
