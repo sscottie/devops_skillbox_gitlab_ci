@@ -6,14 +6,13 @@ services:
 before_script:
   - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
 
-test:
-  script:
-    - yarn test
-  allow_failure: true
-
 build:
   script:
     - docker pull registry.gitlab.com/sscottie/skillbox_devops_hometask
     - docker build --cache-from registry.gitlab.com/sscottie/skillbox_devops_hometask --tag registry.gitlab.com/sscottie/skillbox_devops_hometask:$CI_BUILD_REF --tag registry.gitlab.com/sscottie/skillbox_devops_hometask:latest .
     - docker push registry.gitlab.com/sscottie/skillbox_devops_hometask:$CI_BUILD_REF 
     - docker push registry.gitlab.com/sscottie/skillbox_devops_hometask:latest
+
+test:
+  script:
+    - docker push registry.gitlab.com/sscottie/skillbox_devops_hometask:latest yarn test
