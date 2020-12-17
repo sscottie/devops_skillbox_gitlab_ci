@@ -19,7 +19,8 @@ Also see [elm-flatris](https://github.com/w0rm/elm-flatris).
 yarn install
 yarn test
 yarn build
-yarn start
-```
+yarn start```
 
 Go to http://localhost:3000
+
+updated
