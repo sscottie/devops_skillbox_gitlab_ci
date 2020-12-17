@@ -13,6 +13,6 @@ build:
     - docker push registry.gitlab.com/sscottie/skillbox_devops_hometask:$CI_BUILD_REF 
     - docker push registry.gitlab.com/sscottie/skillbox_devops_hometask:latest
 
-test:
-  script:
-    - docker push registry.gitlab.com/sscottie/skillbox_devops_hometask:latest yarn test
+# test:
+#   script:
+#     - docker push registry.gitlab.com/sscottie/skillbox_devops_hometask:latest yarn test
