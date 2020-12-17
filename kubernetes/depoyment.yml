@@ -3,9 +3,11 @@ kind: Deployment
 metadata:
   name: skillbox
 spec:
-  replicas: 1
+  replicas: 2
   template:
     spec:
       containers:
       - name: skillbox
         image: registry.gitlab.com/sscottie/skillbox_devops_hometask:latest
+        ports:
+          - containerPorts: 3000
